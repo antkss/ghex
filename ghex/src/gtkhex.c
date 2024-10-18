@@ -31,6 +31,7 @@
 */
 
 #include "gtkhex.h"
+#include "gdk/gdkkeysyms.h"
 #include "gtkhex-layout-manager.h"
 #include "common-macros.h"
 
@@ -2152,9 +2153,11 @@ key_press_cb (GtkEventControllerKey *controller,
 
 	/* FIXME - This could use a cleanup. Mostly flown in from old code.
 	 */
+	
 	switch(keyval)
 	{
 		case GDK_KEY_BackSpace:
+			printf("%d\n", self->cursor_pos);
 			if (self->cursor_pos >= 0) {
 				if (self->insert)
 					hex_widget_delete_selection (self);
@@ -2168,6 +2171,7 @@ key_press_cb (GtkEventControllerKey *controller,
 				break;
 			}
 			break;
+
 
 		case GDK_KEY_Delete:
 			if (self->cursor_pos < payload_size)
