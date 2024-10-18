@@ -2157,7 +2157,6 @@ key_press_cb (GtkEventControllerKey *controller,
 	switch(keyval)
 	{
 		case GDK_KEY_BackSpace:
-			printf("%d\n", self->cursor_pos);
 			if (self->cursor_pos >= 0) {
 				if (self->insert)
 					hex_widget_delete_selection (self);
