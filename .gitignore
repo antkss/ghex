@@ -1,1 +1,3 @@
 ghex/build
+pkg
+*pkg.tar*

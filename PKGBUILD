@@ -19,7 +19,7 @@ prepare() {
 
 build() {
     cd $srcdir/../ghex
-    meson setup build --prefix /usr
+    meson setup build --prefix /usr --reconfigure
     ninja -C build
 }
 
